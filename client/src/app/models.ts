@@ -17,7 +17,7 @@ export interface Package {
     name: string
     size: string
     quantity: number
-    extraCost: number
+    totalPrice: number
 
     senderName: string
     senderNumber: string
@@ -30,13 +30,10 @@ export interface Package {
     message: string
 }
 
-export interface Cart{
-    packages: Package[]
-}
 
 export interface Order {
     username: string
     email: string
     comments: string
-    cart: Cart
+    cart: Package[]
   }

@@ -1,0 +1,36 @@
+{"bouquetsStandard":[
+    {
+        "bouquetId" : "",
+        "image" : "",
+        "type" : "dried",
+        "name" : "",
+        "mushrooms" : ["",""],
+        "flowers" :["",""],
+        "description" : "",
+        "wrap" : "",
+        "basePrice":""
+    },
+    {
+        "bouquetId" : "",
+        "image" : "",
+        "type" : "dried",
+        "name" : "",
+        "mushrooms" : ["",""],
+        "flowers" :["",""],
+        "description" : "",
+        "wrap" : "",
+        "basePrice":""
+    },
+    {
+        "bouquetId" : "",
+        "image" : "",
+        "type" : "dried",
+        "name" : "",
+        "mushrooms" : ["",""],
+        "flowers" :["",""],
+        "description" : "",
+        "wrap" : "",
+        "basePrice":""
+    }
+]}
+
