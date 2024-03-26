@@ -1,17 +1,18 @@
 #container{
     width: 100vw;
     height: 100vh;
-    background-image: url(https://iili.io/JWMvNPn.jpg);
+    background-image: url(https://iili.io/JhZ6NWv.jpg);
     background-size: contain;
     display: flex;
     align-items: flex-end;
-    align-content: center;
+
 }
 
 h1{
     font-size:10vw;
     font-style: normal;
     position: relative;
-    align-content: center;
     font-weight: normal;
+    color: rgb(255, 255, 255);
+    line-height: 0.8;
 }

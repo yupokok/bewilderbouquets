@@ -1,0 +1,56 @@
+.bouquet-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #831e1e;
+    border-radius: 5px;
+  }
+  
+  .thumbnail-container {
+    flex:1;
+    margin-right: 20px;
+    
+  }
+  
+  .thumbnail {
+    width: 100px;
+    flex:1;
+    border-radius: 5px;
+  }
+  
+  .details-container {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .name {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .price {
+    font-size: 1.1rem;
+    margin-top: 5px;
+  }
+  
+  .add-to-cart {
+    background-color: #561431;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #060000;
+  }
+  

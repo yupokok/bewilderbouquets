@@ -1,1 +1,132 @@
-<p>customiseform works!</p>
+<div class="select-custom-type">
+    <form [formGroup]="typeForm">
+        <table>
+            <thead>
+                <h1>Customise Your Own Bouquet</h1>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Select Type of Bouquet:</td>
+                    <td><select id="type" name="type" formControlName="type" (change)="selectType($event)">
+                            <option value="edible" > Edible Bouquet</option>
+                            <option value="dried" > Dried Bouquet</option>
+                        </select></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+
+
+
+<form *ngIf="isDried" id="driedBouquetForm">
+    <table>
+        <tr>
+
+            <td>Pick Two Mushrooms:</td>
+            <td>
+                <div class="option-card">
+                    
+                    <img src="https://liquidfungi.com/cdn/shop/products/REISHI-MUSHROOMS-2-1.jpg?v=1629945541&width=1000" alt="Pink Oysters">
+                    <div> <label class="form-check-label" >Sessile Antlers </label> </div>
+                    <div><input class="form-check-input" type="checkbox" id="antlersLingzhi" value="antlersLingzhi" (change)="handleMushCheckboxChange($event)"></div>
+                   
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="conksLingzhi" value="conksLingzhi" (change)="handleMushCheckboxChange($event)">
+                    <label class="form-check-label"   >Sessile Conks </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="blackLingzhi" value="blackLingzhi" (change)="handleMushCheckboxChange($event)">
+                    <label class="form-check-label"    >Neojaponicum Antlers</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="antlersMulti" value="antlersMulti" (change)="handleMushCheckboxChange($event)">
+                    <label class="form-check-label"    >Multipileum Antlers </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Pick Three Flowers:</td>
+            <td>
+                <div class="dried-mushrooms-option"></div>
+                
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="pampas" value="pampas" (change)="handleFlowersCheckboxChange($event)" >
+                    <label class="form-check-label" >Pampas </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="babysBreath" value="babysbreath" (change)="handleFlowersCheckboxChange($event)">
+                    <label class="form-check-label" > Baby's Breath </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="palmFronds" value="palmfronds" (change)="handleFlowersCheckboxChange($event)">
+                    <label class="form-check-label" >Palm Fronds</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="caspia" value="caspia" (change)="handleFlowersCheckboxChange($event)">
+                    <label class="form-check-label" >Caspia </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="eucalyptus" value="eucalyptus" (change)="handleFlowersCheckboxChange($event)">
+                    <label class="form-check-label" >Eucalyptus </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="wheatgrass" value="wheatgrass" (change)="handleFlowersCheckboxChange($event)">
+                    <label class="form-check-label" >Wheatgrass</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="bunntails" value="bunnytails" (change)="handleFlowersCheckboxChange($event)">
+                    <label class="form-check-label" >Bunny Tails</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Color of Wrap:</td>
+            <td> <input type="color"> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="button"> Preview Bouquet </button></td>
+        </tr>
+    </table>
+</form>
+
+<form *ngIf="isDried == false" id="edibleBouquetForm">
+
+    <table>
+        <tr>
+            <td>Pick Three Mushrooms:</td>
+            <td>
+                <div class="edible-mushrooms-option"></div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="antlersLingzhi" value="antlersLingzhi">
+                    <label class="form-check-label" >Pink Oysters</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="conksLingzhi" value="conksLingzhi">
+                    <label class="form-check-label" >Golden Oysters </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="blackLingzhi" value="blackLingzhi">
+                    <label class="form-check-label" >Blue Oysters</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="antlersMulti" value="antlersMulti">
+                    <label class="form-check-label" > Coral Tooth</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Color of Wrap:</td>
+            <td> <input type="color"> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="button"> Preview Bouquet </button></td>
+        </tr>
+    </table>
+</form>
+
+

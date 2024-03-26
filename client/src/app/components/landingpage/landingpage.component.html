@@ -1,11 +1,21 @@
 <div id="container">
-    <h1>BEWILDER BOUQUETS</h1>
+    <table>
+        <tr>
+            <td>
+                <h1>BEWILDER
+                BOUQUETS</h1>
+            </td>
+        </tr>
+    </table>
+    
+    
 
     <table>
         <tr>
-            <td><button> See All Products </button></td>
-            <td><button> Customise Your Own Bouquet </button></td>
-            <td> </td>
+            <td><button type="button" [routerLink]="['/bouquets']"> See All Products </button></td>
+            <td><button type="button" [routerLink]="['/customise']"> Customise Your Own Bouquet </button></td>
+            
         </tr>
     </table>
 </div>
+

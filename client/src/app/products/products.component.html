@@ -1,0 +1,49 @@
+<div>
+    <h1>
+        Bouquets
+    </h1>
+</div>
+<div class="filter-buttons">
+    <label for="filter-buttons"> Filter by type: </label>
+    <button (click)="filterByType('edible')">Edible</button>
+    <button (click)="filterByType('dried')">Dried</button>
+    <button (click)="resetFilter()">Reset</button>
+  </div>
+  
+<div class="bouquet-list">
+
+
+    <!-- <div class="bouquet-card" *ngFor="let bouquet of bouquets">
+      <img class="thumbnail" [src]="bouquet.thumbnailUrl" alt="Bouquet Thumbnail">
+      <h2 class="name">{{ bouquet.name }}</h2>
+      <p class="description">{{ bouquet.description }}</p>
+      <p class="price">{{ bouquet.price | currency }}</p>
+      <button class="add-to-cart" (click)="addToCart(bouquet)">Add to Cart</button>
+    </div> -->
+
+    <div class="bouquet-card">
+        <img class="thumbnail" src="https://iili.io/JhZ6NWv.jpg" alt="Bouquet Thumbnail">
+
+
+        <div class="details-container">
+            <h2 class="name">Dried Lingzhi Bouquet</h2>
+            <p class="description">Featuring the dark Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis est
+                adipisci laboriosam dolor ducimus velit quae, pariatur dignissimos soluta libero repellat magni illo
+                laudantium ad ratione tempora aut eius. Quod?</p>
+            <p class="price">$123</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+</div>
+    <div class="bouquet-card" *ngFor="let bouquet of filteredBouquets"  >
+        <img class="thumbnail" [src]="bouquet.image" alt="Bouquet Thumbnail">
+
+
+        <div class="details-container">
+            <h2 class="name">{{ bouquet.name }}</h2>
+            <p class="description">{{ bouquet.description }}</p>
+            <p class="price">{{bouquet.basePrice | currency:"SGD" }}</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landingpage',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './landingpage.component.css'
 })
 export class LandingpageComponent {
+  
+  private router = inject(Router)
+  isMenuCollapsed: boolean = true;
+
+  toggleMenu() {
+    this.isMenuCollapsed = !this.isMenuCollapsed;
+  }
 
 }
