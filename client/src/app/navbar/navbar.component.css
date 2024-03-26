@@ -1,0 +1,58 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #ffffff;
+    background-color: black;
+    padding: 10px 20px;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .navbar-brand img {
+    height: 100px;
+
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+
+  .cart-icon {
+    position: relative;
+    margin-left: auto; /* Align to the right */
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Add pointer cursor for better UX */
+  }
+  
+  .cart-icon i {
+    font-size: 24px; /* Adjust size as needed */
+    margin-right: 5px; /* Add some space between icon and counter */
+  }
+  
+  .cart-counter {
+    background-color: #a3a3a3; /* Customize background color */
+    color: #ffffff; /* Customize text color */
+    padding: 4px 8px; /* Adjust padding as needed */
+    border-radius: 50%; /* Make it round */
+    font-size: 14px; /* Adjust font size */
+    position: absolute;
+    top: -8px; /* Position counter above the icon */
+    right: -8px; /* Position counter on the right */}

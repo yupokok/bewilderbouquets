@@ -1,0 +1,25 @@
+.signin-form {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .signin-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .signin-form label {
+    font-weight: bold;
+  }
+  
+  .signin-form input[type="email"],
+  .signin-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .signin-form .btn-primary {
+    width: 100%;
+  }
+  

@@ -1,13 +1,16 @@
+<div class="customise-page">
+    
+    <h1>CUSTOMISE A BOUQUET</h1>
+
 <div class="select-custom-type">
     <form [formGroup]="typeForm">
         <table>
             <thead>
-                <h1>Customise Your Own Bouquet</h1>
             </thead>
             <tbody>
                 <tr>
-                    <td>Select Type of Bouquet:</td>
-                    <td><select id="type" name="type" formControlName="type" (change)="selectType($event)">
+                    <td><h2> Select Type of Bouquet: </h2></td>
+                    <td><select id="type" name="type" formControlName="type" (change)="selectType($event)" class="select-dropdown">
                             <option value="edible" > Edible Bouquet</option>
                             <option value="dried" > Dried Bouquet</option>
                         </select></td>
@@ -20,35 +23,45 @@
 
 
 
-<form *ngIf="isDried" id="driedBouquetForm">
+<form *ngIf="isDried" id="driedBouquetForm" class="dried-bouquet-form">
     <table>
         <tr>
 
-            <td>Pick Two Mushrooms:</td>
+            <td> <h3> Pick Two Mushrooms: </h3> </td>
             <td>
-                <div class="option-card">
+                <div class="option-card form-check form-check-inline">
                     
-                    <img src="https://liquidfungi.com/cdn/shop/products/REISHI-MUSHROOMS-2-1.jpg?v=1629945541&width=1000" alt="Pink Oysters">
-                    <div> <label class="form-check-label" >Sessile Antlers </label> </div>
+                    <img src="https://liquidfungi.com/cdn/shop/products/REISHI-MUSHROOMS-2-1.jpg?v=1629945541&width=1000" alt="Antlers Lingzhi">
                     <div><input class="form-check-input" type="checkbox" id="antlersLingzhi" value="antlersLingzhi" (change)="handleMushCheckboxChange($event)"></div>
+                    <div> <label class="form-check-label" >Sessile Antlers </label> </div>
+                    
                    
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="conksLingzhi" value="conksLingzhi" (change)="handleMushCheckboxChange($event)">
-                    <label class="form-check-label"   >Sessile Conks </label>
+                <div class="option-card form-check form-check-inline">
+
+                    <img src="https://liquidfungi.com/cdn/shop/products/7d7f2ea702b728a1f2786d519fbf3f79_cropped_optimized.jpg?v=1629946532&width=1000" alt="Conks">
+                    <div><input class="form-check-input" type="checkbox" id="conksLingzhi" value="conksLingzhi" (change)="handleMushCheckboxChange($event)"></div>
+                    <div><label class="form-check-label"   >Sessile Conks </label></div>
+                    
+
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="blackLingzhi" value="blackLingzhi" (change)="handleMushCheckboxChange($event)">
-                    <label class="form-check-label"    >Neojaponicum Antlers</label>
+                <div class="option-card form-check form-check-inline">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5e6f0b6e123de724cdb5c87c/1662867919352-PFCVHRXL62VIQRV2HIFM/75525361-1894-4CD5-81A6-813910ACACE5.JPG?format=1500w" alt="NeoJap">
+                    
+                    <div><input class="form-check-input" type="checkbox" id="blackLingzhi" value="blackLingzhi" (change)="handleMushCheckboxChange($event)"></div>
+                    <div><label class="form-check-label">Neojaponicum Antlers</label></div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="antlersMulti" value="antlersMulti" (change)="handleMushCheckboxChange($event)">
-                    <label class="form-check-label"    >Multipileum Antlers </label>
+
+
+                <div class=" option-card form-check form-check-inline">
+                    <img src="https://www.terrestrialfungi.com/cdn/shop/products/IMG_6289_1024x1024@2x.JPG?v=1550447041" alt="Multi">
+                    <div><input class="form-check-input" type="checkbox" id="antlersMulti" value="antlersMulti" (change)="handleMushCheckboxChange($event)"></div>
+                    <div> <label class="form-check-label"    >Multipileum Antlers </label></div>
                 </div>
             </td>
         </tr>
         <tr>
-            <td>Pick Three Flowers:</td>
+            <td><h3> Pick Three Flowers: </h3></td>
             <td>
                 <div class="dried-mushrooms-option"></div>
                 
@@ -83,7 +96,7 @@
             </td>
         </tr>
         <tr>
-            <td>Color of Wrap:</td>
+            <td><h3> Pick A Wrap Color: </h3></td>
             <td> <input type="color"> </td>
         </tr>
         <tr>
@@ -93,11 +106,11 @@
     </table>
 </form>
 
-<form *ngIf="isDried == false" id="edibleBouquetForm">
+<form *ngIf="isDried == false" id="edibleBouquetForm" class="edible-bouquet-form">
 
     <table>
         <tr>
-            <td>Pick Three Mushrooms:</td>
+            <td><h3> Pick Three Mushrooms </h3></td>
             <td>
                 <div class="edible-mushrooms-option"></div>
                 <div class="form-check form-check-inline">
@@ -119,7 +132,7 @@
             </td>
         </tr>
         <tr>
-            <td>Color of Wrap:</td>
+            <td><h3> Pick A Wrap Color: </h3></td>
             <td> <input type="color"> </td>
         </tr>
         <tr>
@@ -130,3 +143,4 @@
 </form>
 
 
+</div>

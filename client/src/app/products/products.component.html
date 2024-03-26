@@ -1,13 +1,15 @@
+<div class="top"></div>
+<div class="content">
 <div>
     <h1>
-        Bouquets
+        OUR BOUQUETS
     </h1>
 </div>
-<div class="filter-buttons">
+<div class="filter-buttons container d-flex justify-content-end ">
     <label for="filter-buttons"> Filter by type: </label>
-    <button (click)="filterByType('edible')">Edible</button>
-    <button (click)="filterByType('dried')">Dried</button>
-    <button (click)="resetFilter()">Reset</button>
+    <button (click)="filterByType('edible')" type="button" class="btn btn-light" data-bs-toggle="button" >Edible</button>
+    <button (click)="filterByType('dried')" class="btn btn-light" data-bs-toggle="button" >Dried</button>
+    <button (click)="resetFilter()" class="btn btn-danger">Reset</button>
   </div>
   
 <div class="bouquet-list">
@@ -47,3 +49,4 @@
             <button class="add-to-cart">Add to Cart</button>
         </div>
     </div>
+</div>

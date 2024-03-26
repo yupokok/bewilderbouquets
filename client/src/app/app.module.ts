@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomiseformComponent } from './components/customiseform/customiseform.component';
 import { ProductsComponent } from './products/products.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SigninComponent } from './signin/signin.component';
 
 const appRoutes: Routes = [
   {path:'', component:LandingpageComponent},
@@ -21,7 +23,9 @@ const appRoutes: Routes = [
     AppComponent,
     LandingpageComponent,
     CustomiseformComponent,
-    ProductsComponent
+    ProductsComponent,
+    NavbarComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
