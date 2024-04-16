@@ -1,36 +1,93 @@
-{"bouquetsStandard":[
-    {
-        "bouquetId" : "",
-        "image" : "",
-        "type" : "dried",
-        "name" : "",
-        "mushrooms" : ["",""],
-        "flowers" :["",""],
-        "description" : "",
-        "wrap" : "",
-        "basePrice":""
-    },
-    {
-        "bouquetId" : "",
-        "image" : "",
-        "type" : "dried",
-        "name" : "",
-        "mushrooms" : ["",""],
-        "flowers" :["",""],
-        "description" : "",
-        "wrap" : "",
-        "basePrice":""
-    },
-    {
-        "bouquetId" : "",
-        "image" : "",
-        "type" : "dried",
-        "name" : "",
-        "mushrooms" : ["",""],
-        "flowers" :["",""],
-        "description" : "",
-        "wrap" : "",
-        "basePrice":""
-    }
-]}
-
+[
+        {
+            "bouquetId": "dried1",
+            "name": "Maroon Red Dried Lingzhi Bouquet",
+            "image": "/assets/bouquetpics/dried1.jpg",
+            "type": "dried",
+            "mushrooms": [
+                "Ganoderma lingzhi Antlers",
+                "Ganoderma multipileum Antlers",
+                "Ganoderma lingzhi Conks"
+            ],
+            "flowers": [
+                "BunnyTails",
+                "Wheatgrass",
+                "Caspia"
+            ],
+            "description": "Discover our Classic Prosperity Mushroom Bouquet, featuring red reishi conks, lingzhi antlers, and wild dried flowers. This captivating blend of natural elements harmonizes beauty and wellness, making it an ideal gift or stunning home decor accent. Embrace the enchantment of nature with this exquisite bouquet.",
+            "wrap": "maroon",
+            "basePrice": 250
+        },
+        {
+            "bouquetId": "dried2",
+            "name": "Midnight Lingzhi Bouquet",
+            "image": "/assets/bouquetpics/dried2.jpg",
+            "type": "dried",
+            "mushrooms": [
+                "Neojaponicum lingzhi Antlers",
+                "Ganoderma multipileum Antlers",
+                "Ganoderma lingzhi Conks"
+            ],
+            "flowers": [
+                "Eucalyptus",
+                "Caspia",
+                "Wheatgrass"
+            ],
+            "description": "Introducing our Midnight Lingzhi Mushroom Bouquet, adorned with black lingzhi conks, neojaponicum antlers, and an array of dark-hued dried flowers. Perfect for the unconventional, this captivating ensemble marries mystery with elegance, offering a unique fusion of botanical beauty that's sure to intrigue and enchant.",
+            "wrap": "black",
+            "basePrice": 250
+        },
+        {
+            "bouquetId": "dried3",
+            "name": "Radiant Golden Lingzhi Bouquet",
+            "image": "/assets/bouquetpics/dried3.jpg",
+            "type": "dried",
+            "mushrooms": [
+                "Ganoderma multipileum Antlers",
+                "Ganoderma lingzhi Antlers",
+                "Ganoderma lingzhi Conks"
+            ],
+            "flowers": [
+                "PalmFronds",
+                "Wheatgrass",
+                "BunnyTails"
+            ],
+            "description": "Introducing our Radiant Mushroom Bouquet, featuring golden multipileum antlers, vibrant lingzhi conks, and an array of dried flowers in radiant golden hues. Perfect for those who delight in brightness and charm, this bouquet promises to infuse any space with joy and elegance, a true celebration of nature's splendor.",
+            "wrap": "gold",
+            "basePrice": 250
+        },
+        {
+            "bouquetId": "dried4",
+            "name": "Floral Garden Lingzhi Bouquet",
+            "image": "/assets/bouquetpics/dried4.jpg",
+            "type": "dried",
+            "mushrooms": [
+                "Ganoderma multipileum Antlers",
+                "Ganoderma lingzhi Antlers",
+                "Ganoderma lingzhi Conks"
+            ],
+            "flowers": [
+                "Baby's Breath",
+                "Caspia",
+                "Eucalyptus"
+            ],
+            "description": "Introducing our Floral Garden Bouquet, a delightful fusion of lush dried flowers, verdant plants, and exquisite mushroom conks and antlers. Bursting with vibrant colors, this enchanting arrangement is perfect for color enthusiasts and nature lovers alike. Bring the beauty of a garden indoors with this captivating bouquet.",
+            "wrap": "maroon",
+            "basePrice": 200
+        },
+        {
+            "bouquetId": "edible1",
+            "name": "Edible Oyster Medley Bouquet",
+            "image": "/assets/bouquetpics/edible1.jpg",
+            "type": "edible",
+            "mushrooms": [
+                "Golden Oyster",
+                "Pink Oyster",
+                "Blue Oyster"
+            ],
+            "flowers": [ ],
+            "description": "Presenting our edible Oyster Medley Bouquet, a bountiful harvest adorned with bright golden, pink, and blue oyster mushrooms. Delightfully arranged in a beautiful bloom, each mushroom is ready to be transformed into a dish of your fancy. Celebrate a cooking-enthusiast with this stunning and flavorful bouquet. * The mushrooms can keep fresh in the fridge for up to three days.",
+            "wrap": "kraft",
+            "basePrice": 88
+        }
+    ]

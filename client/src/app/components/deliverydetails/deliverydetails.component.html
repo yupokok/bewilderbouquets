@@ -1,0 +1,62 @@
+<div class="delivery-page">
+
+    <div class="delivery-details">
+        <h1>Add Delivery Details</h1>
+        <br>
+        <form action="" [formGroup]="detailsForm">
+            <table>
+                <tr>
+                    <td>Sender Name:</td>
+                    <td><input type="text" name="" id="" class="form-control" formControlName="senderName"></td>
+                    <td>Recipient Name:</td>
+                    <td><input type="text" name="" id="" class="form-control" formControlName="recipientName"></td>
+                </tr>
+
+                <tr>
+                    <td>Sender Contact:</td>
+                    <td><input type="text" name="" id="" class="form-control" formControlName="senderContact"></td>
+                    <td>Recipient Contact:</td>
+                    <td><input type="text" name="" id="" class="form-control" formControlName="recipientContact"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Recipient Address:</td>
+                    <td><textarea name="" id="" cols="30" rows="3" class="form-control"
+                            formControlName="recipientAddress"></textarea> </td>
+                </tr>
+                <tr>
+                    <td>Occasion: </td>
+                    <td><select name="" id="" class="form-select" aria-label="Default select example"
+                            formControlName="occasion">
+                            <option value="">Birthday</option>
+                            <option value="">Valentine's Day</option>
+                            <option value="">Wedding</option>
+                            <option value="">Anniversary</option>
+                            <option value="">Just Something Special!</option>
+
+                        </select></td>
+                    <td>
+                        Message:
+                    </td>
+                    <td>
+                        <textarea name="" id="" cols="30" rows="3" class="form-control"
+                            formControlName="message"></textarea>
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td></td>
+                    <td>
+
+                    </td>
+                    <td></td>
+                    <td>
+                        <button type="button" style="float: right;"> Add To Cart </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

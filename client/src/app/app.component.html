@@ -1,2 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn"></app-navbar>
+<app-custnavbar *ngIf="isCustomerLoggedIn"></app-custnavbar>
+<app-adminnavbar *ngIf="isAdminLoggedIn"></app-adminnavbar>
 <router-outlet></router-outlet>

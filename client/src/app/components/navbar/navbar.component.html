@@ -1,0 +1,15 @@
+
+<nav class="navbar">
+    <div class="navbar-brand"><img src="/assets/BWLogo.png" [routerLink]="['']"></div>
+    <ul class="nav-links">
+      <li><a [routerLink]="['/bouquets']">See All Products</a></li>
+      <li><a [routerLink]="['/customise']">Customise A Bouquet</a></li>
+
+      <!-- Add more navigation links as needed -->
+    </ul>
+    
+    <ul class="nav-links">
+        <li> <a class="link" (click)="openSignInModal()">Sign In</a> </li>
+      </ul>
+     <!-- add to cart, if not logged in -->
+  </nav>

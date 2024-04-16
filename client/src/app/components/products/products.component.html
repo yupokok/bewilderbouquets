@@ -1,0 +1,44 @@
+<div class="top"></div>
+<div class="content">
+    <div>
+        <h1>
+            OUR BOUQUETS
+        </h1>
+    </div>
+    <div class="filter-buttons container d-flex justify-content-end ">
+        <label for="filter-buttons"> Filter by type: </label>
+        <button (click)="filterByType('edible')" type="button" class="btn btn-light"
+            data-bs-toggle="button">Edible</button>
+        <button (click)="filterByType('dried')" class="btn btn-light" data-bs-toggle="button">Dried</button>
+        <button (click)="reset()" class="btn btn-danger">Reset</button>
+    </div>
+
+    <div class="bouquet-list">
+
+
+        <!-- <div class="bouquet-card" *ngFor="let bouquet of bouquets">
+      <img class="thumbnail" [src]="bouquet.thumbnailUrl" alt="Bouquet Thumbnail">
+      <h2 class="name">{{ bouquet.name }}</h2>
+      <p class="description">{{ bouquet.description }}</p>
+      <p class="price">{{ bouquet.price | currency }}</p>
+      <button class="add-to-cart" (click)="addToCart(bouquet)">Add to Cart</button>
+    </div> -->
+
+        
+
+    </div>
+    <div *ngIf="bouquets$ | async as bouquets">
+        <div *ngIf="bouquets.length > 0">
+            <div class="bouquet-card" *ngFor="let bouquet of filteredBouquets">
+                <img class="thumbnail" [src]="bouquet.image" alt="Bouquet Thumbnail">
+
+                <div class="details-container">
+                    <h2 class="name">{{ bouquet.name }}</h2>
+                    <p class="description">{{ bouquet.description }}</p>
+                    <p class="price">{{bouquet.basePrice | currency:"SGD" }}</p>
+                    <button class="add-to-cart" (click)="openModal(bouquet)" >Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

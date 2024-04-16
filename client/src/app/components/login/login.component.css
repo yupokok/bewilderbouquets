@@ -1,0 +1,53 @@
+ /* Apply specific styles for form */
+ .content{
+   padding-top: 60px;
+    padding: 30px;
+ }
+ 
+ form {
+    margin-bottom: 20px;
+  }
+
+  .form-control {
+    padding: 4px;
+  }
+  
+  
+  .link {    
+    text-decoration: underline;
+    color: blue;
+    
+      }
+  
+  /* Apply specific styles for button */
+  button {
+    padding: 10px 20px;
+    border: solid 1px #f2f2f2;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #c9c9c9;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e39878;
+  }
+  
+  /* Apply specific styles for input[type="color"] */
+  input[type="color"] {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  input{
+    padding: 10px;
+  }
+  
+  /* Apply specific styles for input[type="checkbox"] */
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  

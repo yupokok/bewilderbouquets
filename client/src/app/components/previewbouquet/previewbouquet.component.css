@@ -1,0 +1,40 @@
+.preview-thumbnail {
+    max-width: 100%;
+    max-height: 80vh;
+    display:block;
+    border-radius: 5px;
+  }
+  
+.table{
+    border: solid 0.5px darkred;
+    border-radius: 100px;
+    padding: 5px;
+
+}
+
+.table-header{
+
+    border-radius: 20px;
+    padding: 5px;
+    color: rgb(79, 16, 16);
+    font-weight: bold;
+}
+
+.select-dropdown{
+    padding: 10px 20px;
+    border: solid 1px #f2f2f2;
+    color: #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+
+  }
+
+  button {
+    padding: 10px 20px;
+    border: solid 1px #f2f2f2;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #560808;
+    cursor: pointer;
+  }
+  

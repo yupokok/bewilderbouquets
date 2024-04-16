@@ -1,0 +1,25 @@
+
+<div class="content">
+  <div class="login">
+<h2>Sign In</h2>
+<form [formGroup]="signInForm">
+    
+    <input class="form-control" placeholder="Email" type="email" formControlName="email">
+    <div class="alert alert-danger" role="alert" *ngIf="signInForm.get('email')?.invalid && signInForm.get('email')?.touched">
+      Please enter a valid email.
+    </div>
+
+    <br>
+    <input class="form-control" placeholder="Password" type="password" formControlName="password">
+    <div class="alert alert-danger" role="alert" *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched">
+      Please enter a valid password.
+    </div>
+    <br>
+  <button type="submit" (click)="signIn()" [disabled]=signInForm.invalid >Sign In</button>
+  <br><br>
+
+  <p>Don't have an account yet? <a class="link" (click)="goToRegister()" > Register Here.</a> </p>
+</form>
+
+</div>
+</div>

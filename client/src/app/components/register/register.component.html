@@ -1,0 +1,44 @@
+
+    <div class="content">
+        <h2 class="mb-4">Register </h2>
+        <form [formGroup]="registerForm">
+            <div class="mb-3">
+                <label for="name" class="form-label"> Name</label>
+                <input type="text" class="form-control" id="name" name="name" formControlName="name" >
+                
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" formControlName="email" >
+                <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+                    Please enter a valid email.
+                  </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password"  formControlName="password">
+                <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+                    Please enter a valid password.
+                  </div> 
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword" >
+                <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched">
+                    Please re-enter your password.
+                  </div> 
+
+                  <div class="alert alert-danger" role="alert" *ngIf="passwordsMismatch">
+                    Passwords do not match. Please make sure your passwords match.
+                </div>
+
+        <ngb-toast></ngb-toast>
+
+            </div>
+            <button type="button" class="btn btn-primary" (click)="registerUser()">Register</button>
+        </form>
+    </div>
+
+
+

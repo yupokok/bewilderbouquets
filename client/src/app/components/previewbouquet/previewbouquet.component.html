@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <h4 class="modal-title"> Preview Bouquet </h4>
+  </div>
+  <div class="modal-body">
+    <div class="bouquet-card" >
+        <img class="preview-thumbnail" [src]="bouquet.image" alt="Bouquet Thumbnail">
+
+        <div class="details-container">
+            <h2 class="name">{{ bouquet.name }}</h2>
+            <p class="description">{{ bouquet.description }}</p>
+
+            <div>
+                <table class="table">
+                    <tr class="table" >
+                        <td class="table-header">Flowers</td>
+                        <td class="table" *ngFor="let flower of bouquet.flowers" class="flowers"> {{ flower }}</td>
+                    </tr>
+                    <tr class="table" >
+                        <td class="table-header">Mushrooms</td>
+                        <td  *ngFor="let mushroom of bouquet.mushrooms" class="mushrooms"> {{ mushroom }}</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="price">{{finalPrice | currency:"SGD" }}</p>
+        </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+
+    <table>
+        <tr>
+            <td> <label for="size">Select Size:</label>
+                <select id="size" name="size" class="select-dropdown" (change)="updateSelectedSize($event)" >
+                  <option value="small" >Small (+$0)</option>
+                  <option value="medium">Medium (+$40)</option>
+                  <option value="large" >Large (+$80)</option>
+                </select> </td>
+            <td> <button class="button" (click)="saveBouquetOrder()" [routerLink]="['/add-details']">Add Delivery Details</button> </td>
+        </tr>
+    </table>
+    
+  </div>

@@ -1,24 +1,29 @@
 export interface Bouquet {
+
     bouquetId: string
-    type: string
     name: string
-    mushrooms: string[]
-    flowers: string[]
+    type: string
+    basePrice: number
     description: string
+    flowers: string[]
+    mushrooms: string[]
     wrap: string
     image: string
-    basePrice: number
 }
 
+export interface BouquetOrder {
+        bouquetOrderId:string
+        bouquetId: string
+        name: string
+        wrap: string
+        image: string
+        size: string
+        finalPrice: number
+    }
+
 export interface Package {
-    packageId: string
-    bouquetId: string
-
-    name: string
-    size: string
-    quantity: number
-    totalPrice: number
-
+    bouquetOrderId: string
+    
     senderName: string
     senderNumber: string
 
@@ -28,6 +33,11 @@ export interface Package {
 
     occasion: string
     message: string
+    finalPrice: number
+}
+
+export interface Cart{
+    packages: Package[]
 }
 
 
@@ -35,5 +45,5 @@ export interface Order {
     username: string
     email: string
     comments: string
-    cart: Package[]
+    cart: Cart
   }
