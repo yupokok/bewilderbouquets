@@ -13,6 +13,10 @@ import { AdminpreviewbouquetComponent } from './components/adminpreviewbouquet/a
 const appRoutes: Routes = [
   {path:'', component:LandingpageComponent},
   {path:'admin/manage-products', component:AdminproductsComponent},
+  {path:'admin/analytics', component:AdminanalyticsComponent},
+  {path: 'admin/create-bouquet', component:CreatebouquetComponent},
+
+
 
 ]
 

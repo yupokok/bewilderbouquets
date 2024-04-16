@@ -1,1 +1,39 @@
-<p>adminanalytics works!</p>
+<div style="padding: 30px;">
+  </div>
+  
+  <div class="analytics-container">
+    <div class="analytics-card">
+      <div class="card-header">
+        <div class="metric-avatar">
+          
+        </div>
+        <h4 class="card-title">Orders</h4>
+      </div>
+      <div class="card-content">
+        <div class="metric-value">{{ 23 }}</div>
+        <div class="metric-subtext">Current Month</div>
+      </div>
+      <div class="card-content previous-month">
+        <div class="metric-value">{{ 4 }}</div>
+        <div class="metric-subtext">Previous Month</div>
+      </div>
+    </div>
+  
+    <div class="analytics-card">
+      <div class="card-header">
+        <div class="metric-avatar">
+          
+        </div>
+        <h4 class="card-title">Earnings</h4>
+      </div>
+      <div class="card-content">
+        <div class="metric-value">{{ 1538 | currency:'SGD':true }}</div>
+        <div class="metric-subtext">Current Month</div>
+      </div>
+      <div class="card-content previous-month">
+        <div class="metric-value">{{ 3445 | currency:'SGD':true }}</div>
+        <div class="metric-subtext">Previous Month</div>
+      </div>
+    </div>
+  </div>
+  

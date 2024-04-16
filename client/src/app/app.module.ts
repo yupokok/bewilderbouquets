@@ -26,6 +26,7 @@ import { CreatebouquetComponent } from './admin/components/createbouquet/createb
 import { AdminService } from './services/admin.service';
 import { CartComponent } from './components/cart/cart.component';
 import { CartService } from './cart.service';
+import { AdminanalyticsComponent } from './admin/components/adminanalytics/adminanalytics.component';
 
 const appRoutes: Routes = [
   {path:'', component:LandingpageComponent},
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
   {path: 'admin/manage-products', component:AdminproductsComponent},
   {path: 'admin/create-bouquet', component:CreatebouquetComponent},
   {path: 'customer/cart', component:CartComponent},
+  {path:'admin/analytics', component:AdminanalyticsComponent},
   {path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   {path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
   {path:'add-details', component: DeliverydetailsComponent}
@@ -65,6 +67,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes, { useHash: true })
+    
   ],
   providers: [BouquetService, CartStore, AuthService, UserStorage, AdminService, CartService],
   bootstrap: [AppComponent]

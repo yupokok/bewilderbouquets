@@ -13,7 +13,7 @@ export class AdminnavbarComponent {
   
   logout() {
     UserStorage.signOut();
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('/');
   }
 
 }

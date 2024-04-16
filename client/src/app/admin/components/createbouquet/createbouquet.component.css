@@ -1,0 +1,160 @@
+.customise-page {
+    padding: 20px;
+    padding-top: 150px;
+    background-image:url(/assets/CustomisePage.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    position: inherit;
+    color: #fff;
+  }
+
+/* Apply general styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color:#fff;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  h1 {
+    font-size:4vw;
+    font-style: normal;
+    position: relative;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    line-height: 0.8;
+  }
+  h2 {
+    font-size:2vw;
+    font-style: normal;
+    position: relative;
+    font-weight: normal;
+    line-height: 0.8;
+  }
+  
+  /* Apply specific styles for select-custom-type */
+  .select-custom-type {
+    display: flex;
+    margin: 0 auto;
+   
+    border-radius: 20px;
+    color: #ffffff;
+    
+  }
+
+  .select-dropdown{
+    padding: 10px 20px;
+    border: solid 1px #f2f2f2;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #2b0b0b00;
+
+  }
+
+  
+  
+  /* Apply specific styles for form */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  /* Apply specific styles for form-check-inline */
+  .form-check-inline {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  /* Apply specific styles for button */
+  button {
+    padding: 10px 20px;
+    border: solid 1px #f2f2f2;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #c9c9c9;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e39878;
+  }
+  
+  /* Apply specific styles for input[type="color"] */
+  input[type="color"] {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Apply specific styles for input[type="checkbox"] */
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Apply specific styles for .mushrooms-option, .dried-mushrooms-option, .edible-mushrooms-option */
+  .mushrooms-option,
+  .dried-mushrooms-option,
+  .edible-mushrooms-option {
+    margin-bottom: 10px;
+    background-color: rgb(22, 10, 10);
+  }
+  
+  /* Add more specific styles as needed */
+  
+  .edible-bouquet-form {
+    padding: 20px;
+    background-color: rgba(255, 255, 255);
+    color: black;
+  }
+
+  .dried-bouquet-form {
+    padding: 20px;
+    background-color: rgba(255, 255, 255);
+    color: black;
+    
+  }
+
+.option-card {
+    display:flexbox;
+    height: max-content;
+    width: fit-content;
+    
+    align-items: center;
+    margin-bottom: 10px;
+
+    padding: 10px;
+
+    
+  }
+  
+  .option-card img {
+    width: 150px; /* Adjust size as needed */
+    height: 120px; /* Adjust size as needed */
+    margin-right: 10px;
+    border-radius: 20%;
+    object-fit: cover;
+    object-position: 25% 25%; 
+  }
+  
+  .option-card label {
+    display: flex;
+    align-items: center;
+  }
