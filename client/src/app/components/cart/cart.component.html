@@ -1,0 +1,29 @@
+
+
+  <div *ngIf="bouquetOrders$ | async as bouquetOrders ; else emptyCart">
+    <div *ngFor="let bo of bouquetOrders" class="package-item">
+      <img [src]="bo.image" alt="Bouquet Thumbnail">
+      <p>{{ bo.name }}</p>
+      <p>Total Price: ${{ bo.finalPrice }}</p>
+    </div>
+    <hr>
+    <p>Total Order Price: ${{ orderTotal }}</p>
+  </div>
+  
+  <ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+  </ng-template>
+
+
+<div *ngIf="bouquetOrders$ | async as bouquets">
+    <div *ngIf="bouquets.length > 0">
+        <div class="bouquet-card" *ngFor="let bouquet of bouquets">
+            <img class="thumbnail" [src]="bouquet.image" alt="Bouquet Thumbnail">
+
+            <div class="details-container">
+                <h2 class="name">{{ bouquet.name }}</h2>
+
+            </div>
+        </div>
+    </div>
+</div>

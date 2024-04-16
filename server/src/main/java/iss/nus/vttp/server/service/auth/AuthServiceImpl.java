@@ -9,7 +9,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.io.IOException;
+import iss.nus.vttp.server.enums.OrderStatus;
 import iss.nus.vttp.server.enums.UserRole;
+import iss.nus.vttp.server.models.Order;
 import iss.nus.vttp.server.models.User;
 import iss.nus.vttp.server.models.dto.SignUpRequest;
 import iss.nus.vttp.server.models.dto.UserDto;
@@ -52,14 +54,12 @@ public class AuthServiceImpl implements AuthService {
         user.setRole(UserRole.CUSTOMER);
         User createdUser = userRepository.save(user);
 
-        // Order order = new Order();
-        // order.setAmount(0L);
-        // order.setTotalAmount(0L);
-        // order.setDiscount(0L);
-        // order.setUser(user);
-        // order.setStatus(OrderStatus.Pending);
-
-        // orderRepository.save(order);
+        Order order = new Order();
+        order.setTotalPrice(0L);
+        order.setUser(user);
+        order.setOrderStatus(OrderStatus.PENDING);
+        orderRepository.save(order);
+        
         UserDto createdUserDto = new UserDto();
         createdUserDto.setId(createdUser.getId());
         return createdUserDto;
@@ -85,6 +85,8 @@ public class AuthServiceImpl implements AuthService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'updateUser'");
     }
+
+
 
 
     // @Override

@@ -1,75 +1,90 @@
 <div class="customise-page">
-    
+
     <h1>CUSTOMISE A BOUQUET</h1>
 
-<div class="select-custom-type">
-    <form [formGroup]="typeForm">
+    <div class="select-custom-type">
+        <form [formGroup]="typeForm">
+            <table>
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h2> Select Type of Bouquet: </h2>
+                        </td>
+                        <td><select id="type" name="type" formControlName="type" (change)="selectType($event)"
+                                class="select-dropdown">
+                                <option value="edible"> Edible Bouquet</option>
+                                <option value="dried"> Dried Bouquet</option>
+                            </select></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+
+
+
+    <form *ngIf="isDried" id="driedBouquetForm" class="dried-bouquet-form" [formGroup]="driedMushForm">
         <table>
-            <thead>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><h2> Select Type of Bouquet: </h2></td>
-                    <td><select id="type" name="type" formControlName="type" (change)="selectType($event)" class="select-dropdown">
-                            <option value="edible" > Edible Bouquet</option>
-                            <option value="dried" > Dried Bouquet</option>
-                        </select></td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
-</div>
-
-
-
-
-<form *ngIf="isDried" id="driedBouquetForm" class="dried-bouquet-form" [formGroup]="driedMushForm">
-    <table>
-        <tr>
-            <td><h3>Name Your Custom Bouquet:</h3></td>
-            <td><input type="text" formControlName="name"></td>
+            <tr>
+                <td>
+                    <h3>Name New Bouquet:</h3>
+                </td>
+                <td><input type="text" formControlName="name"></td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Give Bouquet ID:</h3>
+                </td>
+                <td><input type="text" formControlName="bouquetId"></td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Add Description:</h3>
+                </td>
+                <td><textarea type="text" formControlName="description"></textarea></td>
         </tr>
         <tr>
 
-            <td> <h3> Pick Two Mushrooms: </h3> </td>
+            <td> <h3> Add Mushrooms: </h3> </td>
             <td>
-                <div (change)="handleMushCheckboxChange($event)" >
+        <div (change)="handleMushCheckboxChange($event)" >
                 <div class="option-card form-check form-check-inline">
                     
                     <img src="https://liquidfungi.com/cdn/shop/products/REISHI-MUSHROOMS-2-1.jpg?v=1629945541&width=1000" alt="Antlers Lingzhi">
                     <input class="form-check-input" type="checkbox" id="lingzhiAntlers" value="lingzhiAntlers"  >
                     <label class="form-check-label" >Sessile Antlers </label>
-                    
-                   
                 </div>
                 <div class="option-card form-check form-check-inline">
 
                     <img src="https://liquidfungi.com/cdn/shop/products/7d7f2ea702b728a1f2786d519fbf3f79_cropped_optimized.jpg?v=1629946532&width=1000" alt="Conks">
                     <input class="form-check-input" type="checkbox" id="lingzhiConks" value="lingzhiConks" >
-                    <div><label class="form-check-label"   >Sessile Conks </label></div>
-                    
-
+                    <label class="form-check-label"   >Sessile Conks </label>
+            
                 </div>
+
                 <div class="option-card form-check form-check-inline">
                     <img src="https://images.squarespace-cdn.com/content/v1/5e6f0b6e123de724cdb5c87c/1662867919352-PFCVHRXL62VIQRV2HIFM/75525361-1894-4CD5-81A6-813910ACACE5.JPG?format=1500w" alt="NeoJap">
                     
                     <input class="form-check-input" type="checkbox" id="lingzhiBlack" value="lingzhiBlack" >
-                    <div><label class="form-check-label">Neojaponicum Antlers</label></div>
+                    <label class="form-check-label">Neojaponicum Antlers</label>
                 </div>
-
 
                 <div class=" option-card form-check form-check-inline">
                     <img src="https://www.terrestrialfungi.com/cdn/shop/products/IMG_6289_1024x1024@2x.JPG?v=1550447041" alt="Multi">
                     <input class="form-check-input" type="checkbox" id="multiAntlers" value="multiAntlers" >
-                    <div> <label class="form-check-label"> Multipileum Antlers </label></div>
+                     <label class="form-check-label"> Multipileum Antlers </label>
                 </div>
             </div>
             </td>
         </tr>
+
         <tr>
-            <td><h3> Pick Three Flowers: </h3></td>
+            <td><h3> Add Flowers: </h3></td>
             <td>
-                <div class="dried-flowers-option" (change)="handleFlowersCheckboxChange($event)">
+            <div class="dried-flowers-option" (change)="handleFlowersCheckboxChange($event)">
                 
                 <div class=" option-card form-check form-check-inline">
                     <img src="https://floweraccents.ca/cdn/shop/products/78801cdc-68af-4bc9-9e9b-8345d7634f89_551x.jpg?v=1617470519" alt="NeoJap">
@@ -109,26 +124,45 @@
                     <label class="form-check-label" >Bunny Tails</label>
                 </div>
             </div>
+
             </td>
         </tr>
+
         <tr>
             <td><h3> Pick A Wrap Color: </h3></td>
             <td> <input type="color" class="form-control form-control-color" formControlName="wrap"> </td>
         </tr>
         <tr>
+            <td><h3> Set Base Price: </h3></td>
+            <td> <input type="basePrice" class="form-control form-control-color" formControlName="basePrice"> </td>
+        </tr>
+        <tr>
             <td></td>
-            <td><button type="button" (click)="processCustomBouquet()" > Preview Bouquet </button></td>
+            <td><button type="button" (click)="processAdminBouquet()" > Preview Bouquet </button></td>
         </tr>
     </table>
 </form>
 
 <form *ngIf="isDried == false" id="edibleBouquetForm" class="edible-bouquet-form" [formGroup]="edibleMushForm">
 
-    <table>
+    <table> 
         <tr>
-            <td><h3> Pick Three Mushrooms </h3></td>
-            <td>
-                <div (change)="handleEdibleMushCheckboxChange($event)">
+        <td><h3>Name New Bouquet:</h3></td>
+        <td><input type="text" formControlName="name"></td>
+    </tr>  
+    <tr>
+        <td><h3>Give Bouquet ID:</h3></td>
+        <td><input type="text" formControlName="bouquetId"></td>
+    </tr>
+
+    <tr>
+        <td><h3>Add Description:</h3></td>
+        <td><textarea type="text" formControlName="description"> </textarea></td>
+    </tr>
+        <tr>
+            <td><h3> Add Mushrooms </h3></td>
+         <td>
+             <div (change)="handleEdibleMushCheckboxChange($event)">
                 <div class="edible-mushrooms-option"></div>
                 <div class="option-card form-check form-check-inline">
                     <img src="https://i.shgcdn.com/e8476681-e7c6-4c01-aafd-0d4c1097d514/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="NeoJap">
@@ -167,15 +201,17 @@
             </td>
         </tr>
         <tr>
-            <td><h3> Pick A Wrap Color: </h3></td>
+            <td><h3> Wrap Color: </h3></td>
             <td> <input type="color" class="form-control form-control-color"> </td>
         </tr>
         <tr>
+            <td><h3> Set Base Price: </h3></td>
+            <td> <input type="basePrice" class="form-control form-control-color" formControlName="basePrice"> </td>
+        </tr>
+        <tr>
             <td></td>
-            <td><button type="button" (click)="processCustomBouquet()" > Preview Bouquet </button></td>
+            <td><button type="button" (click)="processAdminBouquet()" > Preview Bouquet </button></td>
         </tr>
     </table>
 </form>
-
-
 </div>

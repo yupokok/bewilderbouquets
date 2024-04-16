@@ -31,7 +31,7 @@ public class SecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/customise","/api/bouquets","/api/authenticate", "/api/register", "/order/**")
+                .requestMatchers("/api/customise","/api/bouquets","/api/authenticate", "/api/register", "/order/**", "/api/add-custom", "/api/create-bouquet-order")
                 .permitAll()
                 .and()
                 .authorizeHttpRequests()

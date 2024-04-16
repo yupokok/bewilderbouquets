@@ -21,6 +21,11 @@ import { AuthService } from './services/auth.service';
 import { UserStorage } from './user.storage';
 import { CustnavbarComponent } from './components/custnavbar/custnavbar.component';
 import { AdminnavbarComponent } from './components/adminnavbar/adminnavbar.component';
+import { AdminproductsComponent } from './admin/components/adminproducts/adminproducts.component';
+import { CreatebouquetComponent } from './admin/components/createbouquet/createbouquet.component';
+import { AdminService } from './services/admin.service';
+import { CartComponent } from './components/cart/cart.component';
+import { CartService } from './cart.service';
 
 const appRoutes: Routes = [
   {path:'', component:LandingpageComponent},
@@ -29,6 +34,11 @@ const appRoutes: Routes = [
   {path:'signin', component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'preview', component: PreviewbouquetComponent},
+  {path: 'admin/manage-products', component:AdminproductsComponent},
+  {path: 'admin/create-bouquet', component:CreatebouquetComponent},
+  {path: 'customer/cart', component:CartComponent},
+  {path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  {path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
   {path:'add-details', component: DeliverydetailsComponent}
 
 
@@ -40,12 +50,13 @@ const appRoutes: Routes = [
     CustomiseformComponent,
     ProductsComponent,
     NavbarComponent,
+    CartComponent,
     PreviewbouquetComponent,
     DeliverydetailsComponent,
     LoginComponent,
     RegisterComponent,
     CustnavbarComponent,
-    AdminnavbarComponent
+    AdminnavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +66,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes, { useHash: true })
   ],
-  providers: [BouquetService, CartStore, AuthService, UserStorage],
+  providers: [BouquetService, CartStore, AuthService, UserStorage, AdminService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

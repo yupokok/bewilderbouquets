@@ -6,10 +6,14 @@ import { AdminproductsComponent } from './components/adminproducts/adminproducts
 import { RouterModule, Routes } from '@angular/router';
 import { LandingpageComponent } from '../components/landingpage/landingpage.component';
 import { CreatebouquetComponent } from './components/createbouquet/createbouquet.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminpreviewbouquetComponent } from './components/adminpreviewbouquet/adminpreviewbouquet.component';
 
 
 const appRoutes: Routes = [
   {path:'', component:LandingpageComponent},
+  {path:'admin/manage-products', component:AdminproductsComponent},
+
 ]
 
 @NgModule({
@@ -17,10 +21,11 @@ const appRoutes: Routes = [
     AdminanalyticsComponent,
     AdminordersComponent,
     AdminproductsComponent,
-    CreatebouquetComponent
+    CreatebouquetComponent,
+    AdminpreviewbouquetComponent
   ],
   imports: [
-    CommonModule, RouterModule.forChild(appRoutes)
+    CommonModule, RouterModule.forChild(appRoutes), ReactiveFormsModule, FormsModule
   ]
 })
 export class AdminModule { }

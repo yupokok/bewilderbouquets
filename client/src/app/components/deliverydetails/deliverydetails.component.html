@@ -14,16 +14,16 @@
 
                 <tr>
                     <td>Sender Contact:</td>
-                    <td><input type="text" name="" id="" class="form-control" formControlName="senderContact"></td>
+                    <td><input type="text" name="" id="" class="form-control" formControlName="senderNumber"></td>
                     <td>Recipient Contact:</td>
-                    <td><input type="text" name="" id="" class="form-control" formControlName="recipientContact"></td>
+                    <td><input type="text" name="" id="" class="form-control" formControlName="recipientNumber"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td>Recipient Address:</td>
                     <td><textarea name="" id="" cols="30" rows="3" class="form-control"
-                            formControlName="recipientAddress"></textarea> </td>
+                            formControlName="deliveryAddress" ></textarea> </td>
                 </tr>
                 <tr>
                     <td>Occasion: </td>
@@ -53,7 +53,7 @@
                     </td>
                     <td></td>
                     <td>
-                        <button type="button" style="float: right;"> Add To Cart </button>
+                        <button type="button" style="float: right;" (click)="addToCart()"> Add To Cart </button>
                     </td>
                 </tr>
             </table>

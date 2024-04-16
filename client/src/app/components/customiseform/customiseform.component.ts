@@ -42,6 +42,7 @@ export class CustomiseformComponent implements OnInit {
 
   ngOnInit(): void {
     this.typeForm = this.createTypeForm()
+    
 
   }
 

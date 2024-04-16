@@ -2,6 +2,7 @@ import { Component, Input, OnInit, inject } from '@angular/core';
 import { BouquetOrder } from '../../models';
 import { BouquetService } from '../../bouquet.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class PreviewbouquetComponent implements OnInit {
   bouquetSvc = inject(BouquetService)
 
   modalService = inject(NgbModal)
+  router = inject(Router)
 
   selectedSize: string = 'small';
   finalPrice!: number;
@@ -65,9 +67,16 @@ export class PreviewbouquetComponent implements OnInit {
 
     console.log("Bouquet order created:", bouquetOrder)
     this.modalService.dismissAll();
+    
     this.bouquetSvc.savingBouquetOrder(bouquetOrder)
     .then(resp => {
       console.info('resp: ', resp)
+      this.router.navigate(['/add-details'],{
+        queryParams: { 
+            bouquetOrderId: resp, 
+            finalPrice: this.finalPrice 
+        }
+    })
     })
     .catch(resp => {
       alert(`ADD ERROR: ${resp.error.message}`)

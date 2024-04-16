@@ -3,7 +3,20 @@
   </div>
   <div class="modal-body">
     <div class="bouquet-card" >
-        <img class="preview-thumbnail" [src]="bouquet.image" alt="Bouquet Thumbnail">
+       
+        <div class="file-upload-container">
+            <label class="file-upload-label">
+                <span>Select a File</span>
+                <input type="file" id="fileInput" (change)="onFileSelected($event)" >
+                
+            </label>
+
+            <div *ngIf="selectedFile" class="image-preview">
+                <div class="circle-image">
+                    <img [src]="imagePreview" alt="Selected Image" class="preview-image">
+                </div>
+            </div>
+        </div>
 
         <div class="details-container">
             <h2 class="name">{{ bouquet.name }}</h2>
@@ -26,17 +39,5 @@
     </div>
   </div>
   <div class="modal-footer">
-
-    <table>
-        <tr>
-            <td> <label for="size">Select Size:</label>
-                <select id="size" name="size" class="select-dropdown" (change)="updateSelectedSize($event)" >
-                  <option value="small" >Small (+$0)</option>
-                  <option value="medium">Medium (+$40)</option>
-                  <option value="large" >Large (+$80)</option>
-                </select> </td>
-            <td> <button class="button" (click)="saveBouquetOrder()" >Add Delivery Details</button> </td>
-        </tr>
-    </table>
     
   </div>

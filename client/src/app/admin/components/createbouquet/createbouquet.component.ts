@@ -1,15 +1,17 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Bouquet } from '../../../models';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BouquetService } from '../../../bouquet.service';
+import { PreviewbouquetComponent } from '../../../components/previewbouquet/previewbouquet.component';
+import { AdminService } from '../../../services/admin.service';
 
 @Component({
   selector: 'app-createbouquet',
   templateUrl: './createbouquet.component.html',
   styleUrl: './createbouquet.component.css'
 })
-export class CreatebouquetComponent {
+export class CreatebouquetComponent implements OnInit{
 
   type: string = ""
   isDried?: boolean
@@ -32,12 +34,9 @@ export class CreatebouquetComponent {
   maxEdibleMushAllowed = 3;
 
 
-
-
-
   private builder = inject(FormBuilder)
-  private modalService = inject(NgbModal)
-  private bouquetSvc = inject(BouquetService)
+  private modal = inject(NgbModal)
+  private adminSvc = inject(AdminService)
 
   ngOnInit(): void {
     this.typeForm = this.createTypeForm()
@@ -132,7 +131,10 @@ handleEdibleMushCheckboxChange(event: any) {
   }
 
 
-
+  openModal(bouquet: any) {
+    const modalRef = this.modal.open(PreviewbouquetComponent);
+    modalRef.componentInstance.bouquet = bouquet;
+  }
 
 
   createTypeForm(): FormGroup {
@@ -144,57 +146,63 @@ handleEdibleMushCheckboxChange(event: any) {
   createDriedMushForm(): FormGroup {
     return this.builder.group({
       name: this.builder.control<string>('Custom Bouquet', [Validators.required]),
-      wrap: this.builder.control<string>('8878', [Validators.required])
+      bouquetId: this.builder.control<string>('', [Validators.required]),
+      description: this.builder.control<string>('', [Validators.required]),
+      basePrice: this.builder.control<number>(0, [Validators.required]),
+      wrap: this.builder.control<string>('', [Validators.required])
     })
   }
 
   createEdibleMushForm(): FormGroup {
     return this.builder.group({
-      name: this.builder.control<string>('Custom Bouquet', [Validators.required]),
+      name: this.builder.control<string>('', [Validators.required]),
+      bouquetId: this.builder.control<string>('', [Validators.required]),
+      description: this.builder.control<string>('', [Validators.required]),
+      basePrice: this.builder.control<number>(0, [Validators.required]),
       wrap: this.builder.control<string>('', [Validators.required])
     })
   }
 
-  createCustomBouquet(): Bouquet {
+  createAdminBouquet(): Bouquet {
     if (this.selectedValue = 'dried') {
 
-      const customBouquet: Bouquet = {
-        bouquetId: 'custom', 
+      const adminBouquet: Bouquet = {
+        bouquetId: this.driedMushForm.get('bouquetId')?.value, 
         name: this.driedMushForm.get('name')?.value,
-        description: 'Custom Bouquet', 
-        basePrice: 300, 
+        description: this.driedMushForm.get('description')?.value, 
+        basePrice: this.driedMushForm.get('basePrice')?.value, 
         type: 'dried', 
         mushrooms: this.selectedDriedMushrooms,
         flowers: this.selectedFlowers,
         wrap: this.driedMushForm.get('wrap')?.value,
         image: '/assets/bouquetpics/custom.jpg'
       }
-      return customBouquet
+      return adminBouquet
       
     } else {
 
-      const customBouquet: Bouquet = {
-        bouquetId: 'custom', 
+      const adminBouquet: Bouquet = {
+        bouquetId: this.edibleMushForm.get('bouquetId')?.value, 
         name: this.edibleMushForm.get('name')?.value,
-        description: 'Custom Bouquet', 
-        basePrice: 300, 
+        description: this.edibleMushForm.get('description')?.value, 
+        basePrice: this.edibleMushForm.get('basePrice')?.value, 
         type: 'edible', 
         mushrooms: this.selectedEdible,
         flowers:[],
         wrap: this.edibleMushForm.get('wrap')?.value,
         image: '/assets/bouquetpics/custom.jpg'
       }
-      return customBouquet
+      return adminBouquet
     }
   }
 
-  processCustomBouquet(){
-    const customBouquet = this.createCustomBouquet();
-    console.log("Creating custom bouquet:", customBouquet)
-    this.bouquetSvc.addCustomBouquet(customBouquet)
+  processAdminBouquet(){
+    const adminBouquet = this.createAdminBouquet();
+    console.log("Creating custom bouquet:", adminBouquet)
+    this.adminSvc.addAdminBouquet(adminBouquet)
     .then(resp => {
       console.info('resp: ', resp)
-      this.openModal(customBouquet)
+      this.openModal(adminBouquet)
     })
     .catch(resp => {
       alert(`ADD ERROR: ${resp.error.message}`)

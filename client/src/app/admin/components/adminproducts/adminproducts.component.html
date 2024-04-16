@@ -1,1 +1,29 @@
-<p>adminproducts works!</p>
+
+<div class="admin-products">
+<h2>Manage Bouquets</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Bouquet ID</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Base Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bouquet of bouquets">
+      <td>{{ bouquet.bouquetId }}</td>
+      <td>{{ bouquet.name }}</td>
+      <td>{{ bouquet.type }}</td>
+      <td>{{ bouquet.basePrice }}</td>
+      <td>
+        <button (click)="deleteBouquet(bouquet.bouquetId)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button [routerLink]="['/admin/create-bouquet']">Add New Bouquet</button>
+
+</div>
